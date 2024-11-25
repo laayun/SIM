@@ -1,0 +1,71 @@
+/*옷 목록 상세요소*/
+.clothes {
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+  margin: 130px 35px 35px 35px;
+  transition: 1s; /*페이지 나타내기 요소 js와 연동됨.(스크롤 이벤트)*/
+  opacity: 0; /*요소를 안보이게 함.*/
+  background-position: center;
+  position: relative;
+}
+
+.clothes:hover {
+  background-size:cover;
+}
+
+
+
+#ClothesPage .clothes.fade-in {
+  opacity: 1; /*요소를 보이게 함.(스크롤 이벤트)*/
+}
+
+
+/*이미지 크기조절*/
+.image-1 {
+  background-position: center; /* 1번째열 1번째이미지 */
+}
+
+.image-2 {
+  background-position: 50% 20%;  /* 1번째열 2번째이미지 */
+}
+
+.image-3 {
+  background-position: 50% 30%; /* 1번째열 3번째이미지 */
+}
+
+.image-4 {
+  background-position: 50% 70%; /* 1번째열 4번째이미지 */
+}
+
+.image-5 {
+  background-position: 50% 0%; /* 2번째열 1번째이미지 */
+}
+
+.image-6 {
+  background-position: 50% 50%; /* 2번째열 2번째이미지 */
+}
+
+.image-7 {
+  background-position: 50% 50%; /* 2번째열 3번째이미지 */
+}
+
+.image-8 {
+  background-position: 50% 20%; /* 2번째열 4번째이미지 */
+}
+
+.image-9 {
+  background-position: 50% 50%; /* 3번째열 1번째이미지 */
+}
+
+.image-10 {
+  background-position: 50% 65%; /* 3번째열 2번째이미지 */
+}
+
+.image-11 {
+  background-position: 50% 90%; /* 3번째열 3번째이미지 */
+}
+
+.image-12 {
+  background-position: 50% 0%; /* 3번째열 4번째이미지 */
+}

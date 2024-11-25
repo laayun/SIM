@@ -1,0 +1,470 @@
+*{margin: 0px; padding:0px; box-sizing: border-box;}
+
+html {
+  height:100%;
+}
+
+main {
+  background-color: #ffffff;
+  position: relative;
+  width: 100%; 
+  flex: 1;
+}
+
+.slide {
+  /* layout */
+  display: flex;
+  flex-wrap: nowrap;
+  /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+  overflow: hidden;
+
+  /* position */
+  /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+  position: relative;
+
+  /* size */
+  width: 100%;
+}
+.slide_item {
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+  position: relative;
+  left: 0px;
+
+  /* size */
+  width: 100%;
+  height: 600px;
+  /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+  flex-shrink: 0;
+
+  /* transition */
+  transition: left 0.15s;
+}
+.slide_button {
+  /* layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* position */
+  position: absolute;
+  /* 버튼이 중앙에 위치하게 하기위해 계산 */
+  top: calc(50% - 16px);
+
+  /* size */
+  width: 32px;
+  height: 32px;
+
+  /* style */
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.slide_prev_button {
+  left: 10px;
+}
+.slide_next_button {
+  right: 10px;
+}
+
+/* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+.slide_item:nth-child(1) {
+  background-color: #cfcfcf;
+}
+.slide_item:nth-child(2) {
+  background-color: #666464;
+}
+.slide_item:nth-child(3) {
+  background-color: #969696;
+}
+.slide_item:nth-child(4) {
+  background-color: rgb(206, 205, 205);
+}
+.slide_item:nth-child(5) {
+  background-color: rgb(255, 255, 255);
+}
+
+/* 페이지네이션 스타일 */
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.slide_pagination {
+  /* layout */
+  display: flex;
+  gap: 5px;
+
+  /* position */
+  position: absolute;
+  bottom: 0;
+  /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slide_pagination > li {
+  /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+  color: #7fb5ff88;
+  cursor: pointer;
+  font-size: 25px;
+}
+.slide_pagination > li.active {
+  /* 현재 슬라이드 색상은 투명도 없이 */
+  color: #7fb5ff;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  flex-direction: column;
+  overflow-x:hidden;
+  background-color: #ffffff;
+} 
+
+#wrap {
+  margin: 0 auto;
+  width: 100%;
+  overflow:hidden;
+  min-height: 100%;
+  position: relative;
+  height:auto;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+}
+
+#logo {
+  padding: 0px; /*이걸 늘리면 앞에 공간만 늘어남.*/
+  display: inline-block;
+  width: 100px;
+  line-height: 50px;
+  position:absolute;
+  text-align: center;
+  margin-left: 10px;
+}
+
+#logo a {
+    font-size: 20pt;
+    font-family: "Abhaya Libre", serif;
+    font-weight: 800;
+    font-style: normal;
+    cursor: pointer;
+    text-decoration: none;
+    color:#000000;
+}
+
+/*nav바 영역-드롭다운 메뉴*/
+.menu {
+  width: 60%;
+  overflow: hidden;
+  margin: 0px auto;
+  float: left;
+  position: relative;
+  left: 150px;
+}
+
+.menu > li {
+  width:12%; /*20*5=100%*/
+  float: left;
+  text-align: center;
+  line-height: 50px;
+  background-color: #ffffff;
+  padding: 0 30px;
+}
+.menu a {
+  color: #000;
+  font-size: 20px;
+  font-family: "Abhaya Libre", serif;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+}
+
+
+.submenu > li {
+  line-height: 50px;
+  background-color: #000000;
+}
+
+.submenu {
+  height: 0; /*ul의 높이를 안보이게 처리*/
+  overflow: hidden;
+}
+
+.submenu a{
+  font-size: 15px;
+  font-family: "Abhaya Libre", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.menu > li:hover {
+  background-color: #000000;
+  transition-duration: 0.5s;
+}
+
+.menu > li:hover a {
+ color: #fff;
+ transition-duration: 0.5s;
+}
+
+
+.menu > li:hover .submenu {
+  height: 150px; /*서브메뉴 li한개의 높이 50*3*/
+  transition-duration: 1s;
+}
+
+  /*Style is MY LIFE 문구 영역*/
+  #section1 {
+    width:100%;
+    height: auto;
+    padding: 200px 0 200px 0; /*(위 오른쪽 아래 왼쪽)*/
+    overflow: hidden;
+  }
+
+  .letter {
+    font-size: 128px;
+    text-align: center;
+    font-family: "Abhaya Libre", serif;
+    font-weight: 800;
+    font-style: normal;
+    opacity: 0; /*안보이게함*/
+    transform: translateY(100%);
+  }
+  
+  .article.show .letter {
+    opacity: 1; /*보이게 함*/
+    animation: reveal 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;/*0.5의 속도로 밑에서 위로 올라오게하기*/
+  }
+
+  @keyframes reveal { /*문구 애니메이션*/
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  /*Style is MY LIFE 문구*/
+  #DesignSentence1 {
+    width: auto;
+    font-size: 120px;
+    font-family: "Abhaya Libre", serif;
+    font-weight: 500;
+    font-style: normal;
+    border-top: dashed 2px black;
+    white-space: nowrap;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+  }
+
+  #DesignSentence1 p {
+    will-change: transform;
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0%); }
+  }
+
+  @media (hover: hover) {
+    #DesignSentence1 {
+      -webkit-transform: translateY(calc(100% - 8rem));
+      transform: translateY(calc(100% - 8rem));
+    }
+  }
+
+  /*collection 영역*/
+  #section2 { 
+    background-color: #000000;
+    display:inline-block;
+    width: 110%;
+    height: 900px;
+    overflow: hidden;
+  }
+
+  #section2 p { /*collection 문구*/
+    float: left;
+    font-size: 20px;
+    font-family: "Abhaya Libre", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    line-height: 900px;
+    padding: 0 150px 0 150px;    
+  }
+
+  .collection1 { /*img 영역*/
+    float: left;
+    text-align: center;
+    margin: 150px 91px 0 0;
+    background-color: #666464;
+    width: 400px;
+    height: 500px;
+    align-items: center;
+    border: 1px solid white;
+  }
+
+  .collection2 { /*간격 수정 및 배치 수정*/
+    float:left;
+    text-align: center;
+    background-color: #ffffff;
+    background-size: 100%; /*그림사이즈(액자안의 그림)*/
+    width: 300px; /*공간의 크기(액자)*/
+    height: 400px;
+    margin: 20px 10px 20px 20px;
+    border: 1px solid white;   
+  }
+
+
+  #DesignSentence2 {
+    width: auto;
+    font-size: 120px;
+    font-family: "Abhaya Libre", serif;
+    font-weight: 500;
+    font-style: normal;
+    border-bottom: dashed 2px black;
+    white-space: nowrap;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+  }
+
+  #DesignSentence2 p {
+    will-change: transform;
+    animation: marquee2 30s linear infinite;
+  }
+
+  @keyframes marquee2 {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(-115%); }
+  }
+
+  @media (hover: hover) {
+    #DesignSentence2 {
+      -webkit-transform: translateY(calc(100% - 9rem));
+      transform: translateY(calc(100% - 9rem));
+    }
+  }
+
+  #thenew {
+    margin: 400px 0 0px 100px;
+    font-size: 20px;
+    font-family: "Abhaya Libre", serif;
+    font-weight: 800;
+    font-style: normal;  
+
+  }
+
+  .section3 { /*신상품 영역*/
+    width: 120%;
+    height: 650px;
+    margin: 20px 0 400px 0;          
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    overflow: hidden;
+    background-color: #000;
+  }
+  
+  .section3 .section3-inner {
+    position: absolute; /*이 요소가 빠져서 가로 슬라이드 오류났었음*/
+    display: grid;
+    grid-template-columns: repeat(6, 3fr);
+    gap: 30px; /*이미지 사이 간격*/
+    transition: 1s; /*페이지 나타내기 요소 js와 연동됨.*/
+    opacity: 0; /*요소를 안보이게 함.*/
+  }
+
+  .section3 .section3-inner.fade-in { /*페이지 나타내기 요소 js와 연동됨.*/
+    opacity: 1; /*요소를 보이게 함.*/
+  }
+  
+  .overlay1 {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 45%;
+    left: 30%;
+    transform: (-50%, -50%);
+    opacity: 0;
+    transition: 0.3s;
+  }
+  
+  .newclothes:hover .overlay1 {
+    opacity: 1;
+  }  
+
+  /*텍스트 요소*/
+.explain {
+  text-align: center;
+  color: #ffffff;
+}
+  
+.newclothes:hover {
+  filter: brightness(0.7); /*마우스 대면 이미지 밝기 50으로 낮춤*/
+}
+
+.newclothes { /*신상품 이미지 크기*/
+  width: 400px;
+  height: 400px;
+  background-color: #666464;
+  display: inline-block;
+  margin: 110px;
+  transition: 0.7s;
+}
+
+/*-----footer 영역-----*/
+  footer {
+    margin: 0 auto;
+    bottom: 0;
+    width: 1920px;
+    height: 350px;
+  }
+
+  footer h1 { /*푸터의 SIM. 글자요소*/
+    font-size: 96px;
+    font-family: "Abhaya Libre", serif;
+    font-weight: 800;
+    font-style: normal;
+    padding:50px 0 0 70px;
+    position:relative;
+    top: 30px;
+
+  }
+
+  .footerline { /*푸터의 가로 작대기 2개(style is my life 문구 양옆)*/
+    width: 750px;
+    display: inline-block;
+    margin: 0 50px 30px 50px;
+    height: 1px;
+    background: #000000;
+    border: 0;
+    
+  }
+
+  .footerP {
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Abhaya Libre", serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    padding: 0 40px 0 40px;
+  }
+
+  .information p {
+    margin: 10px 0 20px 60px;
+    font-size: 15px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }

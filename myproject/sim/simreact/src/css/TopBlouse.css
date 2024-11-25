@@ -1,0 +1,239 @@
+*{margin: 0px; padding:0px; box-sizing: border-box;}
+
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: 100;
+  src: url("./fonts/NotoSansKR/NotoSansKR-Light.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/NotoSansKR/NotoSansKR-Regular.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/NotoSansKR/NotoSansKR-Medium.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: bold;
+  src: url("./fonts/NotoSansKR/NotoSansKR-Bold.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("./fonts/NotoSansKR/NotoSansKR-Thin.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "AbhayaLibre";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("./fonts/AbhayaLibre/AbhayaLibre-SemiBold.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "AbhayaLibre";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/AbhayaLibre/AbhayaLibre-Regular.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "AbhayaLibre";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/AbhayaLibre/AbhayaLibre-Medium.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "AbhayaLibre";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/AbhayaLibre/AbhayaLibre-ExtraBold.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "AbhayaLibre";
+  font-style: normal;
+  font-weight: Bold;
+  src: url("./fonts/AbhayaLibre/AbhayaLibre-Bold.ttf") format("woff");
+}
+
+html {
+  height:100%;
+}
+
+main {
+  background-color: #ffffff;
+  position: relative;
+  width: 100%; 
+  flex: 1;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  flex-direction: column;
+  overflow-x:hidden;
+  background-color: #ffffff;
+} 
+
+#wrap {
+  margin: 0 auto;
+  width: 100%;
+  overflow:hidden;
+  position: relative;
+  height:auto;
+}
+
+/*----nav바 영역(Main.css)----*/
+
+
+
+/*부가 nav바(옷 종류 고를 수 있도록하는)*/
+.topnav {
+  text-align: center;
+  font-size: 20px;
+  font-family: "AbhayaLibre", serif;
+  font-weight: 800;
+  font-style: normal;
+  width:100%;
+  height: 120px;
+  margin: 200px 0 0 0;
+}
+
+.navsmall {
+  position: relative;
+  margin: 50px 0 0 0;
+}
+
+/*부가 nav바 요소(shirts / T-shirts / blouse)*/
+.small-item {
+  padding: 0 20px; /*가로 간격*/
+  text-align: center;
+  position:relative;
+  display: inline-block; /*같은선에 나란히 정렬할 수 있게하는 요소*/
+  cursor: pointer;
+}
+
+.small-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.small-item:hover { /*마우스 올렸을 때 밑줄표시 해야함*/
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset : 5px;
+} 
+
+/*css 겹침 현상으로 인하여 css module을 이용. TopShirts, TopTShirts, TopBlouse 페이지 small-item 각각의 요소를 지정*/
+/*small-item 1,2,3요소 부분은 TopShirts.module.css 파일에 있음.*/
+/*부가 nav바 아래 밑줄요소*/
+
+/*---------------hover 텍스트 구간(옷에 마우스 대면 글씨가 뜨도록 하는 요소)------------------*/
+/*TopShirts.css 요소 참고. 거기 다있음. 요소가 겹쳐서 지운것.*/
+
+/*텍스트 요소 TopShirts.module.css 파일 참고*/
+
+/*Top페이지 전체적용이라 없애면 글씨가 한가운데로 가고 hover도 안되는 오류남.*/
+/*어떻게 해야할까?*/
+@import url('ClothesCommon.css');
+
+/*다음 옷 목록으로 넘기는 영역(<- 1 2 3->)*/
+#undercontainer {
+  text-align: center;
+  font-size: 20px;
+  font-family: "AbhayaLibre", serif;
+  font-weight: 800;
+  font-style: normal;
+  width:100%;
+  height: auto;
+  margin: 100px 0 200px 0;
+}
+
+.undernav {
+  position: relative;
+}
+
+/*(<-1 2 3->)*/
+.under-item {
+  padding: 0 20px; /*글자 간격*/
+  cursor: pointer;
+  position:relative;
+  display: inline-block; /*같은선에 나란히 정렬할 수 있게하는 요소*/
+}
+
+.under-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.under-item:hover { 
+  text-decoration-line: underline; /*마우스 올렸을 때 밑줄표시하는요소*/
+  text-decoration-thickness: 1px; /*줄 굵기*/
+  text-underline-offset : 5px;
+} 
+
+/*-----footer 영역-----*/
+footer {
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
+  height: 350px;
+  background-color: #000000;
+}
+
+footer h1 { /*푸터의 SIM. 글자요소*/
+  font-size: 96px;
+  font-family: "AbhayaLibre", serif;
+  font-weight: 800;
+  font-style: normal;
+  padding:30px 0 0 70px;
+  position:relative;
+  top: 30px;
+  color:#ffffff;
+
+
+}
+
+.footerline { /*푸터의 가로 작대기 2개(style is my life 문구 양옆)*/
+  width: 750px;
+  display: inline-block;
+  margin: 0 50px 30px 50px;
+  height: 1px;
+  background: #ffffff;
+  border: 0;   
+}
+
+.footerP { /*가로줄 사이에 끼어있는 Style is MY LIFE.*/
+  display: inline-block;
+  font-size: 20px;
+  font-family: "AbhayaLibre", serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  padding: 0 40px 0 40px;
+  color:#ffffff;
+  }
+
+.information p { /*주소, 번호 등이 나와있는 영역*/
+  margin: 10px 0 20px 60px;
+  font-size: 15px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color:#ffffff;
+}

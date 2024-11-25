@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIM.</title>
+  <link rel="stylesheet" href="C:\Users\wldbs\myproject\sim\simcss\Q&A-write.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id = wrap>
+    <main>
+      <nav> <!--네비바 영역-->
+        <span id = logo><a href = "C:\Users\wldbs\myproject\sim\simhtml\Main.html">SIM.</a></span>
+        <ul class="menu">
+          <li>
+            <a href="C:\Users\wldbs\myproject\sim\simhtml\top-shirts.html">top</a>
+            <ul class="submenu">
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\top-shirts.html">shirts</a></li>
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\top-T-shirts.html">T-shirts</a></li>
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\top-blouse.html">blouse</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="C:\Users\wldbs\myproject\sim\simhtml\bottom-pants.html">bottom</a>
+            <ul class="submenu">
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\bottom-pants.html">pants</a></li>
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\bottom-skirts.html">skirts</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="C:\Users\wldbs\myproject\sim\simhtml\onepiece.html">onepiece</a>
+          </li>
+          <li>
+            <a href="C:\Users\wldbs\myproject\sim\simhtml\outer.html">outer</a>
+          </li>
+          <li>
+            <a href="C:\Users\wldbs\myproject\sim\simhtml\Q&A.html">Q&A</a>
+            <ul class="submenu">
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\Q&A.html">문의</a></li>
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\Q&A-write.html">글쓰기</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav> <!--네비바 영역 끝-->
+      <div class = topnav>
+        <p>writing.</p>
+      </div>
+      <div id = Writingsection>
+        <form action="Q&A.html"> <!--글 카테고리 고르기-->
+          <select name = "category">
+            <option value = "none">글 유형</option>
+            <option value = "Question">질문하기</option>
+            <option value = "inquire">문의하기</option>
+          </select>
+        </form>
+        <form action="Q&A.html" method="post"> <!--게시판 영역-->
+          <table> 
+              <tr><td class="header">Title.</td></tr>
+              <tr><td><input type="text" placeholder="제목을 입력하세요" name="title"></td></tr>
+              <tr><td class="header">Comment.</td></tr>
+              <tr><td><textarea placeholder="내용을 입력하세요" name="detail"></textarea></td></tr>
+              <tr><td><input type="submit" value="등록" onclick="alert('작성 완료!')"></td></tr>
+          </table>
+          </form>
+      </div>
+    </main>
+    <footer> 
+      <h1>SIM.</h1>
+      <hr class="footerline">
+      <p class="footerP">Style<br>is<br>MY LIFE.</p>
+      <hr class="footerline">
+      <span class ="information"><p>Address: 대전광역시 유성구 1번지 11<br>number: 010-111-1111<br>사업자 등록번호: 100-11-1111</p></span>
+    </footer>
+  </div>
+</body>
+</html> 

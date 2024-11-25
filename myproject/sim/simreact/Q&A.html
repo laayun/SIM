@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIM.</title>
+  <link rel="stylesheet" href="C:\Users\wldbs\myproject\sim\simcss\Q&A.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id = wrap>
+    <main>
+      <nav>
+        <span id = logo><a href = "C:\Users\wldbs\myproject\sim\simhtml\Main.html">SIM.</a></span>
+        <ul class="menu">
+          <li>
+            <a href="C:\Users\wldbs\myproject\sim\simhtml\top-shirts.html">top</a>
+            <ul class="submenu">
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\top-shirts.html">shirts</a></li>
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\top-T-shirts.html">T-shirts</a></li>
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\top-blouse.html">blouse</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="C:\Users\wldbs\myproject\sim\simhtml\bottom-pants.html">bottom</a>
+            <ul class="submenu">
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\bottom-pants.html">pants</a></li>
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\bottom-skirts.html">skirts</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="C:\Users\wldbs\myproject\sim\simhtml\onepiece.html">onepiece</a>
+          </li>
+          <li>
+            <a href="C:\Users\wldbs\myproject\sim\simhtml\outer.html">outer</a>
+          </li>
+          <li>
+            <a href="C:\Users\wldbs\myproject\sim\simhtml\Q&A.html">Q&A</a>
+            <ul class="submenu">
+              <li><a href="#">문의</a></li>
+              <li><a href="C:\Users\wldbs\myproject\sim\simhtml\Q&A-write.html">글쓰기</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class = topnav>
+        <p>Q&A.</p>
+      </div>
+      <div id = Questionsection>
+        <div id = Question>
+          <p>Question</p>
+          <table class="table">
+            <tr class="header">
+                <td class="num">번호</td>
+                <td class="title">제목</td>
+                <td>작성자</td>
+                <td>작성날짜</td>
+            </tr>
+            <script>
+                var i, day = 31;
+                for (i = 1; i <= 10; i++) {
+                    document.write("<tr class='body'>");
+                    document.write("<td>" + i +"</td>");
+                    document.write("<td class='title'>대충 질문써져있는 글</td>"); 
+                    document.write("<td>작성자</td>"); 
+                  document.write("<td>24-08-" + day-- + "</td>");
+                    document.write("</tr>");
+                }
+               </script>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td><button onclick="location.href='Q&A-write.html'">글쓰기</button></td>
+            </tr>
+        </table>
+        </div>
+        <div id = Eventsection>
+          <p>Inquire</p>
+          <table class="table">
+            <tr class="header">
+                <td class="num">번호</td>
+                <td class="title">제목</td>
+                <td>작성자</td>
+                <td>작성날짜</td>
+            </tr>
+            <script>
+                var i, day =30;
+                for (i = 1; i <= 10; i++) {
+                    document.write("<tr class='body'>");
+                    document.write("<td>" + i +"</td>");
+                    document.write("<td class='title'>문의하는 글</td>"); 
+                    document.write("<td>작성자</td>"); 
+                  document.write("<td>24-08-" + day-- + "</td>");
+                    document.write("</tr>");
+                }
+               </script>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td><button onclick="location.href='Q&A-write.html'">글쓰기</button></td>
+            </tr>
+        </table>
+        </div>
+      </div>
+      <div id = container>
+        <div id =Questioncontainer> <!-- 옷 페이지 넘기는 영역-->
+          <ul class = "undernav">
+            <li class = "under-item"><a href = "#">←</a></li>
+            <li class = "under-item"><a href = "#">1</a></li>
+            <li class = "under-item"><a href = "#">2</a></li>
+            <li class = "under-item"><a href = "#">3</a></li>
+            <li class = "under-item"><a href = "#">→</a></li>
+          </ul>
+        </div>
+        <div id =Eventcontainer> <!-- 옷 페이지 넘기는 영역-->
+          <ul class = "undernav">
+            <li class = "under-item"><a href = "#">←</a></li>
+            <li class = "under-item"><a href = "#">1</a></li>
+            <li class = "under-item"><a href = "#">2</a></li>
+            <li class = "under-item"><a href = "#">3</a></li>
+            <li class = "under-item"><a href = "#">→</a></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <h1>SIM.</h1>
+      <hr class="footerline">
+      <p class="footerP">Style<br>is<br>MY LIFE.</p>
+      <hr class="footerline">
+      <span class ="information"><p>Address: 대전광역시 유성구 1번지 11<br>number: 010-111-1111<br>사업자 등록번호: 100-11-1111</p></span>
+    </footer>
+  </div>
+</body>
+</html> 

@@ -1,0 +1,25 @@
+.box01 {
+  width: 500px;
+  height: 300px;
+  position: relative;
+  background-image: url("../../media/examples/lizard.png");
+  background-size: cover;
+}
+
+.box01::before {
+  content: "";
+  opacity: 0.5;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #000;
+}
+
+.box01 h1 {
+  color: #fff;
+  text-align: center;
+  line-height: 300px;
+  position: relative;
+}

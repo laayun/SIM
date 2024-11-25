@@ -1,0 +1,250 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: 100;
+  src: url("./fonts/NotoSansKR/NotoSansKR-Light.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/NotoSansKR/NotoSansKR-Regular.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/NotoSansKR/NotoSansKR-Medium.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: bold;
+  src: url("./fonts/NotoSansKR/NotoSansKR-Bold.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("./fonts/NotoSansKR/NotoSansKR-Thin.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "AbhayaLibre";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("./fonts/AbhayaLibre/AbhayaLibre-SemiBold.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "AbhayaLibre";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/AbhayaLibre/AbhayaLibre-Regular.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "AbhayaLibre";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/AbhayaLibre/AbhayaLibre-Medium.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "AbhayaLibre";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/AbhayaLibre/AbhayaLibre-ExtraBold.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "AbhayaLibre";
+  font-style: normal;
+  font-weight: Bold;
+  src: url("./fonts/AbhayaLibre/AbhayaLibre-Bold.ttf") format("woff");
+}
+
+html {
+  height: 100%;
+}
+
+main {
+  background-color: #ffffff;
+  position: relative;
+  width: 100%;
+  flex: 1;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+#wrap {
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: auto;
+}
+
+/*----nav바 영역(Main.css 참고)----*/
+
+
+/*부가 nav바(옷 종류 고를 수 있도록하는)*/
+.topnav {
+  text-align: center;
+  font-size: 20px;
+  font-family: "AbhayaLibre", serif;
+  font-weight: 800;
+  font-style: normal;
+  width: 100%;
+  height: 120px;
+  margin: 200px 0 0 0;
+}
+
+#Writingsection {
+  width:100%;
+  height: auto;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+
+/*게시판 영역*/
+select {
+  margin: 50px 0 0px 1320px;
+  border-radius: 5px;
+
+}
+
+/*QandAtable이랑 네임이 겹쳐서 바꿨음. 속성이름 겹침현상 다음에 할때 주의.*/
+.Writetable {
+  margin: auto;
+  display: inline-block;
+}
+  
+input[type="text"] {
+  border: 1px rgb(0, 0, 0) solid;
+  width: 900px;
+  height: 50px;
+  border-radius: 5px;
+  padding-left: 10px;
+  margin: 0 0px 0 500px;
+  box-shadow: 0px 3px 3px 0px gray; /*그림자 요소*/
+  }
+  
+  textarea {
+  border: 1px rgb(0, 0, 0) solid;
+  width: 900px;
+  height: 900px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-top: 10px;
+  resize: none;
+  margin: 0 0px 0 500px;
+  box-shadow: 0px 2px 2px 0px gray; /*그림자 요소*/
+  }
+  
+  .Writeheader{ /*title, comment*/
+  height: 20px;
+  text-align: right;
+  position: relative;
+  top: 50px;
+  right: 920px;
+  font-size: 20px;
+  font-family: "AbhayaLibre", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  }
+  
+  
+  /*등록버튼*/
+  input[type="submit"] {
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+  border: 0;
+  outline: 1px rgb(0, 0, 0) solid;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  margin: 10px 0 100px 0;
+  float: right;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px 0px gray; /*그림자 요소*/
+  }
+  
+  input[type="submit"]:active {
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 5px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  } 
+
+/*-----footer 영역-----*/
+footer { /*푸터의 SIM. 글자요소*/
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
+  height: 350px;
+  background-color: #000000;
+}
+
+footer h1 { /*밑간격 조절해야함*/
+  font-size: 96px;
+  font-family: "AbhayaLibre", serif;
+  font-weight: 800;
+  font-style: normal;
+  padding:30px 0 0 70px;
+  position:relative;
+  top: 30px;
+  color:#ffffff;
+
+
+}
+
+.footerline { /*푸터의 가로 작대기 2개(style is my life 문구 양옆)*/
+  width: 750px;
+  display: inline-block;
+  margin: 0 50px 30px 50px;
+  height: 1px;
+  background: #ffffff;
+  border: 0;   
+}
+
+.footerP { /*가로줄 사이에 끼어있는 Style is MY LIFE.*/
+  display: inline-block;
+  font-size: 20px;
+  font-family: "AbhayaLibre", serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  padding: 0 40px 0 40px;
+  color:#ffffff;
+  }
+
+.information p { /*주소, 번호 등이 나와있는 영역*/
+  margin: 10px 0 20px 60px;
+  font-size: 15px;
+  font-family: "NotoSansKR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color:#ffffff;
+}
