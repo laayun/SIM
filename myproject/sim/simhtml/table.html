@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIM.</title>
+  <link rel="stylesheet" href="C:\Users\wldbs\myproject\sim\simcss\table.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id = wrap>
+    <main>
+      <div id = Questionsection>
+        <div id = Question>
+          <p>Question</p>
+          <table class="table">
+            <tr class="header">
+                <td class="num">번호</td>
+                <td class="title">제목</td>
+                <td>작성자</td>
+                <td>작성날짜</td>
+            </tr>
+            <script>
+                var i, day = 31;
+                for (i = 1; i <= 10; i++) {
+                    document.write("<tr class='body'>");
+                    document.write("<td>" + i +"</td>");
+                    document.write("<td class='title'>대충 질문써져있는 글</td>"); 
+                    document.write("<td>작성자</td>"); 
+                  document.write("<td>24-08-" + day-- + "</td>");
+                    document.write("</tr>");
+                }
+               </script>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td><button onclick="location.href='Q&A-write.html'">글쓰기</button></td>
+            </tr>
+        </table>
+        </div>
+       
+      </div>
+      <div id = container>
+        <div id =Questioncontainer> <!-- 옷 페이지 넘기는 영역-->
+          <ul class = "undernav">
+            <li class = "under-item"><a href = "#">←</a></li>
+            <li class = "under-item"><a href = "#">1</a></li>
+            <li class = "under-item"><a href = "#">2</a></li>
+            <li class = "under-item"><a href = "#">3</a></li>
+            <li class = "under-item"><a href = "#">→</a></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html> 
